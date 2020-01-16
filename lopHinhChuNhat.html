@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lớp hình chữ nhật</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3 "></canvas>
+    <script>
+        let Rectangle = function (x,y) {
+            this.x = x;
+            this.y = y;
+
+            this.getChuVi = function () {
+                return (x + y) * 2;
+            }
+            this.getDienTich = function () {
+                return x * y;
+            }
+        };
+
+        function createRectangle(){
+            var hinhChuNhat=document.getElementById("myCanvas").getContext("2d");
+            var hcn= new Rectangle(500,400);
+            hinhChuNhat.fillRect(50,50,hcn.x,hcn.y);
+            hinhChuNhat.clearRect();
+            hinhChuNhat.strokeRect();
+        }
+
+        let rectangle = new Rectangle(2,5);
+        let chuVi=rectangle.getChuVi();
+        let dienTich=rectangle.getDienTich();
+        alert("Diện tích: " + dienTich + " Chu vi: " + chuVi);
+
+        createRectangle();
+    </script>
+</body>
+</html>
