@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let temperature=function(C) {
+            this.C = C;
+
+            this.changeToF = function () {
+                return (C * 1.8) + 32;
+            }
+            this.changeToK = function () {
+                return C + 273.15;
+            }
+        };
+
+            let Temperature = new temperature(25);
+            let F=Temperature.changeToF();
+            let K=Temperature.changeToK();
+            document.write("Từ độ C sang độ F là: " + F +" ,từ độ C sang độ K là: "+ K)
+
+
+    </script>
+</body>
+</html>
