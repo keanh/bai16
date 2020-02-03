@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var Rat=function (weight,speed,status) {
+            this.weight=weight;
+            this.name=name;
+            this.speed=speed;
+            this.status=status;
+            this.getName=function () {
+                return this.name;
+            };
+
+            // this.getWeight = function () {
+            //     return this.weight;
+            // };
+
+            this.getSpeed=function () {
+                return this.speed;
+            };
+
+            this.getStatus=function () {
+                if (this.status === true){
+                    alert("Sống");
+                }else{
+                    alert("Chết");
+                }
+            };
+
+            this.text=function () {
+                alert("chít chít");
+            };
+        }
+
+        var Cat=function (weight,speed) {
+            this.weight=weight;
+           // this.name = name;
+            this.speed=speed;
+
+            this.getName=function () {
+                return this.name;
+            };
+
+            this.getWeight = function () {
+                return this.weight;
+            };
+
+            this.getSpeed=function () {
+                return this.speed;
+            };
+
+            this.maxSpeed=function () {
+                this.speed*2;
+            };
+
+            this.text=function () {
+                alert("meo meo");
+            };
+
+            this.catchMouse=function () {
+                if (this.speed>rat.speed){
+                    alert("Bắt được chuột");
+                    return true;
+                }else{
+                    alert("Không bắt được chuột");
+                    return false;
+                }
+            };
+
+            this.eat = function () {
+                if (this.catchMouse()) {
+                    this.weight += rat.weight;
+                }
+            };
+        }
+
+        var rat = new Rat(10,20,0);
+        var cat=new Cat(50,30);
+        alert(cat.weight);
+        cat.eat();
+        alert(cat.getWeight());
+    </script>
+</body>
+</html>
