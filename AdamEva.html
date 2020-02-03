@@ -2,9 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <script>
+        var Apple=function(weight) {
+            this.weight = weight;
+
+            this.decrease = function () {
+                if (this.weight > 0) {
+                    return this.weight--;
+                }
+            };
+
+            this.getWeight = function () {
+                return this.weight;
+            };
+        }
+
+        var Human = function (weight) {
+            this.weight = weight;
+
+            this.setTalk=function (text) {
+                this.text=text;
+            };
+
+            this.getTalk=function () {
+                return this.text;
+            }
+
+            this.setAppleWeight= function (apple) {
+                this.apple=apple;
+            };
+
+            this.checkApple=function () {
+                return this.apple.getWeight();
+            };
+
+            this.setName=function (name) {
+                this.name=name;
+            };
+
+            this.getName=function () {
+                return this.name;
+            };
+
+            this.getHumanWeight = function () {
+                return this.weight;
+            };
+
+            this.isMale=function (gender) {
+                this.gender=gender;
+            };
+
+            this.setGender=function (boolean) {
+                return this.gender;
+            };
+
+            this.eat = function () {
+                apple.decrease();
+                this.weight++;
+            };
+
+        }
+
+        var apple = new Apple(10);
+        var Adam = new Human(50);
+        var Eva=new Human(40);
+        while (apple.getWeight()>0) {
+            Adam.eat();
+            Adam.setName("Adam");
+            alert("Qủa táo còn " + apple.getWeight() + " đơn vị, " + Adam.getName() + " cân nặng là " + Adam.getHumanWeight());
+
+            Eva.setName("Eva");
+            Eva.eat();
+            alert("Qủa táo còn " + apple.getWeight() + " đơn vị, " + Eva.getName() + " cân nặng là " + Eva.getHumanWeight());
+        }
+    </script>
 </body>
 </html>
