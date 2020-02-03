@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var Remote = function (status,number,volume,volume1) {
+            this.status=status;
+            this.number=number;
+            this.volume=volume;
+            this.volume1=volume1;
+
+            this.changeNumber=function () {
+                return this.number;
+            };
+
+            this.increaseVolume=function () {
+                return this.volume + this.volume1;
+            };
+
+            this.decreaseVolume=function () {
+                return this.volume - this.volume1;
+            };
+
+            this.switchOn = function () {
+                this.status=true;
+                tv.turnOn();
+            };
+
+            this.switchOff = function () {
+                this.status=false;
+                tv.turnOff();
+            };
+        }
+
+        var TV = function (number) {
+            this.number=number;
+
+            this.getNumber=function () {
+                alert("Kênh " + this.number);
+            };
+
+            this.changeNumber=function () {
+                alert("Kênh " + remote.number);
+            };
+
+            this.getVolume=function () {
+                alert("Âm lượng hiện tại: " + remote.volume)
+            };
+
+            this.getIncreaseVolume=function () {
+                return remote.increaseVolume();
+            };
+
+            this.getDecreaseVolume=function () {
+                return remote.decreaseVolume();
+            }
+            this.turnOn=function () {
+                this.status=true;
+                alert("Turn on");
+            };
+
+            this.turnOff=function () {
+                this.status=false;
+                alert("Turn off");
+            };
+
+        }
+
+        var remote=new Remote(true,1,30,2);
+        var tv= new TV();
+
+    </script>
+</body>
+</html>
